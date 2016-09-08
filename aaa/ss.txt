@@ -1,0 +1,18 @@
+﻿[
+	{
+		"name1":{"name":"广东肇庆海星生物科技"},
+		"int":[
+			{"xinxi":"我是第一个产品信息淡粉没淡粉没梅淡粉没淡粉没","leixing":"食品添加剂","yuanjia":"1200.99","tuangou":"1100.99","dingdan":"订单数不能小于起批量50","danjia":"6963","jiage":""},
+
+			{"xinxi":"我是第二个产品信息淡粉没淡粉没","leixing1":"食品添加剂","danjia":"600"}
+		]
+	},
+    {
+		"name1":{"name":"北京智能社生物科技"},
+		"int":[
+			{"xinxi":"我是第一个产品信息","leixing":"类型一盛大","fapiao0":"true","fapiao0":"false","yunfei":"300","danjia":"300"},
+			
+			{"xinxi":"我是第二个产品信息","leixing":"类型二","fapiao1":"false","fapiao0":"true","yunfei":"1000","danjia":"600"}
+		]
+	}
+]

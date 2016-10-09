@@ -1,0 +1,709 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+<meta name="viewport" content="width=device-width, user-scalable=no, initail-scale=1">
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<meta content="yes" name="apple-touch-fullscreen"/>
+<meta content="telephone=no,email=no" name="format-detection"/>
+<meta name="App-Config" content="fullscreen=yes,useHistoryState=yes,transition=yes"/>
+<style>
+*{
+	margin:0;
+	padding:0;
+	list-style:none;
+}
+a{
+	text-decoration:none;
+	color:#fff;
+}
+body{
+	background:#f0efed;
+}
+header{
+	width:100%;
+	height:51px;
+	background:#06c1ae;
+	border-bottom:1px solid #21897d;
+	overflow:hidden;
+	display:-webkit-box;
+}
+header .address a{
+	display:block;
+	font-size:16px;
+	text-align:center;
+	width:67px;
+	line-height:51px;
+}
+header .address a:after{
+	content:'∨';
+	font-size:12px;
+}
+header .search{
+	-webkit-box-flex:1;
+	padding-top:10px;
+}
+header .search a{
+	display:block;
+	width:100%;
+	height:32px;
+	border-radius:3px;
+	background:#05a494;
+	font-size:12px;
+	line-height:32px;
+	color:#68dbce;
+}
+header .search a i{
+	display:inline-block;
+	width:15px;
+	height:13px;
+	margin:0 7px 0 9px;
+	vertical-align:middle;
+	background:url(images/search.png) no-repeat;
+}
+header .person{
+	width:48px;
+	padding-top:8px;
+}
+header .person a{
+	text-align:center;
+	display:block;
+	font-size:12px;
+}
+header .person a:before{
+	content:'';
+	display:block;
+	margin:0 auto 3px;
+	width:22px;
+	height:20px;
+	background:url(images/person.png);
+}
+section{
+	width:100%;
+	overflow:hidden;
+}
+.banner a{
+	display:block;
+	width:320px;
+	height:50px;
+	margin:0 auto;
+}
+.banner a img{
+	width:100%;
+}
+nav{
+	position:relative;
+	height:180px;
+	background:#fff;
+	border-bottom:1px solid #ddd8ce;
+	text-align:center;
+	margin-bottom:10px;
+}
+nav a{
+	display:block;
+	width:100%;
+	height:100%;
+	font-size:12px;
+	color:#666666;
+}
+nav ul{
+	overflow:hidden;
+}
+nav ol{
+	position:absolute;
+	left:50%;
+	width:56px;
+	margin-left:-28px;
+}
+nav ol li{
+	float:left;
+	margin:0 10px;
+	width:8px;
+	height:8px;
+	border-radius:4px;
+	background:#f0efed;
+}
+nav ol li.active{
+	background:#06c1ae;
+}
+nav ul li{
+	float:left;
+	width:25%;
+	height:82px;
+	text-align:center;
+}
+nav ul li img{
+	display:block;
+	margin:10px auto 9px;
+}
+.hot{
+	display:block;
+	width:100%;
+	height:67px;
+	border-top:1px solid #ddd8ce;
+	border-bottom:1px solid #ddd8ce;
+	background:#fff;
+	overflow:hidden;
+	margin-bottom:10px;
+}
+.hot .open{
+	float:left;
+	width:40px;
+	height:40px;
+	margin:15px 10px 0 19px;
+	background:url(images/open.png) no-repeat;
+}
+.hot .introduction{
+	float:left;
+}
+.hot h2{
+	font-size:16px;
+	color:#333333;
+	margin:15px 0 9px;
+}
+.hot p{
+	font-size:12px;
+	color:#999999;
+}
+.recommend{
+	width:100%;
+	height:154px;
+	border-top:1px solid #ddd8ce;
+	border-bottom:1px solid #ddd8ce;
+	background:#fff;
+	display:-webkit-box;
+	padding-top:6px;
+	margin-bottom:10px;
+}
+.recommend .left{
+	display:block;
+	-webkit-box-flex:1;
+	box-sizing:border-box;
+	border-right:1px solid #ddd8ce;
+	text-align:center;
+	height:148px;
+}
+.recommend .left h3{
+	margin-top:15px;
+	font-size:14px;
+	color:#55a40f;
+}
+.recommend .left p{
+	margin-top:15px;
+	font-size:12px;
+	color:#666666;
+}
+.recommend .left img{
+	width:88px;
+}
+.recommend .right{
+	-webkit-box-flex:2;
+}
+.recommend .right .top{
+	display:block;
+	height:73px;
+	border-bottom:1px solid #ddd8ce;
+	text-align:center;
+}
+.recommend .right .top span{
+	vertical-align: top;
+	display:inline-block;
+	width:85px;
+}
+.recommend .right strong{
+	margin-top:9px;
+    margin-bottom:12.5px;
+	display:block;
+	color:#ff3f0d;
+	font-size:14px;
+}
+.recommend .right font{
+	display:block;
+	color:#666666;
+	font-size:12px;
+}
+.recommend .right .top img{
+	width:85px;
+	height:65px;
+}
+.recommend .right .bottom{
+	width:100%;
+	height:74px;
+	display:-webkit-box;
+}
+.recommend .right .bottom a{
+	display:block;
+	-webkit-box-flex:1;
+	text-align:center;
+}
+.recommend .right .bottom img{
+	margin-top:-8px;
+}
+.recommend .right .bottom .bt_l{
+	border-right:1px solid #ddd8ce;
+}
+.recommend .right .bottom .bt_l span{
+	display:block;
+	width:85px;
+	height:42px;
+	text-align:left;
+	margin:auto;
+}
+.recommend .right .bottom .bt_l strong{
+	margin-top:6px;
+	margin-bottom:5px;
+}
+.recommend .right .bottom .bt_r strong{
+	margin-bottom:11px;
+}
+.recommend .right .bottom .num{
+	display:inline-block;
+	width:20px;
+	height:15px;
+	background:#4c4c4c;
+	border-radius:3px;
+	color:#fff;
+}
+.recommend .right .bottom i{
+	font-size:9px;
+	color:#4c4c4c;
+	font-style:normal;
+}
+.huodong{
+	margin-bottom:10px;
+	overflow:hidden;
+}
+.huodong .huodong_a1{
+	display:block;
+	display:-webkit-box;
+	border-top:1px solid #ddd8ce;
+	border-bottom:1px solid #ddd8ce;
+	width:100%;
+	height:77px;
+	background:#fff;
+	overflow:hidden;
+}
+.huodong span{
+	display:block;
+	-webkit-box-flex:1;
+	margin-left:16px;
+	margin-top:21px;
+}
+.huodong span strong{
+	display:block;
+	font-size:18px;
+	color:#ff7f60;
+}
+.huodong span font{
+	font-size:12px;
+	color:#999999;
+}
+.huodong img{
+	margin-right:10px;
+	margin-top:7px;
+}
+.huodong .huodong_a2{
+	float:left;
+	display:-webkit-box;
+	box-sizing:border-box;
+	border-bottom:1px solid #ddd8ce;
+	width:50%;
+	height:77px;
+	background:#fff;
+	overflow:hidden;
+}
+dl{
+	background:#fff;
+	border-top:1px solid #ddd8ce;
+}
+dt{
+	line-height:41px;
+	font-size:16px;
+	padding-left:11px;
+}
+dd{
+	box-sizing:border-box;
+	border-top:1px solid #ddd8ce;
+	margin-left:11px;
+	height:103px;
+}
+dd a{
+	display:block;
+	display:-webkit-box;
+}
+.pic{
+	position:relative;
+	margin-top:10px;
+	width:90px;
+	margin-right:10px;
+}
+.pic span{
+	position:absolute;
+	left:0;
+	top:0;
+	width:50px;
+	height:50px;
+	overflow:hidden;
+}
+.pic span:after{
+	content: '免预约';
+    font-size: 12px;
+    background: #06c1ae;
+    color: #fff;
+    position:absolute;
+    width: 60px;
+    text-align: center;
+    -webkit-transform: rotateZ(-45deg);
+    left:-14.5px;
+    top: 10px;
+}
+.explain{
+	-webkit-box-flex:1;
+	margin-right:9px;
+}
+.explain div:nth-child(1){
+	margin-top:15px;
+	font-size:14px;
+	color:#333333;
+}
+.explain div:nth-child(2){
+	margin-top:9px;
+	margin-bottom:22px;
+	font-size:12px;
+	color:#666666;
+}
+.explain div:nth-child(3){
+	position:relative;
+}
+.explain .strong{
+	font-size:16px;
+	color:#06c1ae;
+}
+.explain .strong_color{
+	font-size:11px;
+	color:#06c1ae;
+}
+.explain .tag{
+	font-size:12px;
+	color:#ff9900;
+	border:1px solid #ff9900;
+	border-radius:3px;
+	padding:3px;
+}
+.explain .line_right{
+	font-size:12px;
+	color:#666666;
+	position:absolute;
+	right:0;
+	top:0;
+}
+</style>
+<title>无标题文档</title>
+
+</head>
+
+<body style="height:3000px;">
+	<header>
+		<div class="address">
+			<a href="javascript:;">北京</a>
+		</div>
+		<div class="search">
+			<a href="javascript:;"><i></i>输入商家/品类/商圈</a>
+		</div>
+		<div class="person">
+			<a href="javascript:;">我的</a>
+		</div>
+	</header>
+	<section>
+		<div class="banner">
+			<a href="javascript:;"><img src="images/dbc70b32f22415bc55d1523d7141735c18365.jpg" alt=""></a>
+		</div>
+		<nav>
+			<ul>
+				<li><a href="javascript:;"><img src="images/1.png" alt="">美食</a></li>
+				<li><a href="javascript:;"><img src="images/2.png" alt="">电影</a></li>
+				<li><a href="javascript:;"><img src="images/3.png" alt="">酒店</a></li>
+				<li><a href="javascript:;"><img src="images/4.png" alt="">KTV</a></li>
+				<li><a href="javascript:;"><img src="images/5.png" alt="">今日新单</a></li>
+				<li><a href="javascript:;"><img src="images/6.png" alt="">代金券</a></li>
+				<li><a href="javascript:;"><img src="images/7.png" alt="">外卖</a></li>
+				<li><a href="javascript:;"><img src="images/8.png" alt="">周边游</a></li>
+			</ul>
+			<ol>
+				<li class="active"></li>
+				<li></li>
+			</ol>
+		</nav>
+		<a class="hot" href="javascript:;">
+			<div class="open"></div>
+			<div class="introduction">
+				<h2>上门服务</h2>
+				<p>保洁、洗车、美甲</p>
+			</div>
+		</a>
+		<div class="recommend">
+			<a class="left" href="javascript:;">
+				<h3>我们约吧</h3>
+				<p>恋人家人好朋友</p>
+				<img src="images/fe4d2e89827aa829e12e2557ded363a112289.png" alt="">
+			</a>
+			<div class="right">
+				<a class="top" href="javascript:;">
+					<span>
+						<strong>低价超值</strong>
+						<font>十元惠生活</font>
+					</span>
+					<img src="images/a06d0c5c0a972e784345b2d648b034ec9710.jpg" alt="">
+				</a>
+				<div class="bottom">
+					<a class="bt_l" href="javascript:;">
+						<span>
+							<strong style="color:#f842a0;">逛街必备</strong>
+							<font>甜点奶茶随手点</font>
+						</span>
+						<img width="40" src="images/257967793a6a089574b7491e7346e5729041.png" alt="">
+					</a>
+					<a class="bt_r" href="javascript:;">
+						<span>
+							<strong style="color:#ff8601;">名店抢购</strong>
+							<font>已结束</font>
+							<i class="num">00</i>
+							<i>:</i>
+							<i class="num">00</i>
+							<i>:</i>
+							<i class="num">00</i>
+						</span>
+					</a>
+				</div>
+			</div>
+		</div>
+		<div class="huodong">
+			<a class="huodong_a1" href="javascript:;">
+				<span>
+					<strong>1元吃喝玩乐</strong>
+					<font>新用户专享</font>
+				</span>
+				<img width="177" height="65" src="images/b49185c18b5ddfb32a5c1e78dd4f18c254968.jpg">
+			</a>
+			<a class="huodong_a2" style="border-right:1px solid #ddd8ce;" href="javascript:;">
+				<span>
+					<strong style="color:#ed6644;">中秋看大片</strong>
+					<font>9.9起在线选座</font>
+				</span>
+				<img width="65" height="65" src="images/198c70294cc2d9836593ee2ddcd1ea3a16835.png">
+			</a>
+			<a class="huodong_a2" href="javascript:;">
+				<span>
+					<strong style="color:#f99b09;">小黄人归来</strong>
+					<font>9.9观影选座</font>
+				</span>
+				<img width="65" height="65" src="images/aafe9622fb23f27aa276a0d509b75c3210187.jpg">
+			</a>
+			<a class="huodong_a2" style="border-right:1px solid #ddd8ce;" href="javascript:;">
+				<span>
+					<strong style="color:#6bbd00;">美食半价抢</strong>
+					<font>只为你精挑细选</font>
+				</span>
+				<img width="65" height="65" src="images/fd5745db8584e90c346f7236e4fabddd21778.png">
+			</a>
+			<a class="huodong_a2" href="javascript:;">
+				<span>
+					<strong style="color:#7687f1;">酒店十一促</strong>
+					<font>国庆住房惠到底</font>
+				</span>
+				<img width="65" height="65" src="images/a532bd7c2d1dba62ee72c74d0b1731d34444.jpg">
+			</a>
+		</div>
+		<dl>
+			<dt>猜你喜欢</dt>
+			<dd>
+				<a href="javascript:;">
+					<div class="pic">
+						<span></span>
+						<img width="90" height="82" src="images/065628bb7c85fe0b69ea1fe18a93f4c0137167.jpg">
+					</div>
+					<div class="explain">
+						<div style="">吉野家</div>
+						<div>[139店通用]宫保鸡丁饭（小）+小绿茶=9.9元1份</div>
+						<div>
+							<span class="strong">9.9</span>
+							<span class="strong_color">元</span>
+							<span class="tag">1元抢</span>
+							<span class="line_right">已售86827</span>
+						</div>
+					</div>
+				</a>
+			</dd>
+			<dd>
+				<a href="javascript:;">
+					<div class="pic">
+						<span></span>
+						<img width="90" height="82" src="images/065628bb7c85fe0b69ea1fe18a93f4c0137167.jpg">
+					</div>
+					<div class="explain">
+						<div style="">吉野家</div>
+						<div>[139店通用]宫保鸡丁饭（小）+小绿茶=9.9元1份</div>
+						<div>
+							<span class="strong">9.9</span>
+							<span class="strong_color">元</span>
+							<span class="tag">1元抢</span>
+							<span class="line_right">已售86827</span>
+						</div>
+					</div>
+				</a>
+			</dd>
+			<dd>
+				<a href="javascript:;">
+					<div class="pic">
+						<span></span>
+						<img width="90" height="82" src="images/065628bb7c85fe0b69ea1fe18a93f4c0137167.jpg">
+					</div>
+					<div class="explain">
+						<div style="">吉野家</div>
+						<div>[139店通用]宫保鸡丁饭（小）+小绿茶=9.9元1份</div>
+						<div>
+							<span class="strong">9.9</span>
+							<span class="strong_color">元</span>
+							<span class="tag">1元抢</span>
+							<span class="line_right">已售86827</span>
+						</div>
+					</div>
+				</a>
+			</dd>
+			<dd>
+				<a href="javascript:;">
+					<div class="pic">
+						<span></span>
+						<img width="90" height="82" src="images/065628bb7c85fe0b69ea1fe18a93f4c0137167.jpg">
+					</div>
+					<div class="explain">
+						<div style="">吉野家</div>
+						<div>[139店通用]宫保鸡丁饭（小）+小绿茶=9.9元1份</div>
+						<div>
+							<span class="strong">9.9</span>
+							<span class="strong_color">元</span>
+							<span class="tag">1元抢</span>
+							<span class="line_right">已售86827</span>
+						</div>
+					</div>
+				</a>
+			</dd>
+			<dd>
+				<a href="javascript:;">
+					<div class="pic">
+						<span></span>
+						<img width="90" height="82" src="images/065628bb7c85fe0b69ea1fe18a93f4c0137167.jpg">
+					</div>
+					<div class="explain">
+						<div style="">吉野家</div>
+						<div>[139店通用]宫保鸡丁饭（小）+小绿茶=9.9元1份</div>
+						<div>
+							<span class="strong">9.9</span>
+							<span class="strong_color">元</span>
+							<span class="tag">1元抢</span>
+							<span class="line_right">已售86827</span>
+						</div>
+					</div>
+				</a>
+			</dd>
+			<dd>
+				<a href="javascript:;">
+					<div class="pic">
+						<span></span>
+						<img width="90" height="82" src="images/065628bb7c85fe0b69ea1fe18a93f4c0137167.jpg">
+					</div>
+					<div class="explain">
+						<div style="">吉野家</div>
+						<div>[139店通用]宫保鸡丁饭（小）+小绿茶=9.9元1份</div>
+						<div>
+							<span class="strong">9.9</span>
+							<span class="strong_color">元</span>
+							<span class="tag">1元抢</span>
+							<span class="line_right">已售86827</span>
+						</div>
+					</div>
+				</a>
+			</dd>
+			<dd>
+				<a href="javascript:;">
+					<div class="pic">
+						<span></span>
+						<img width="90" height="82" src="images/065628bb7c85fe0b69ea1fe18a93f4c0137167.jpg">
+					</div>
+					<div class="explain">
+						<div style="">吉野家</div>
+						<div>[139店通用]宫保鸡丁饭（小）+小绿茶=9.9元1份</div>
+						<div>
+							<span class="strong">9.9</span>
+							<span class="strong_color">元</span>
+							<span class="tag">1元抢</span>
+							<span class="line_right">已售86827</span>
+						</div>
+					</div>
+				</a>
+			</dd>
+			<dd>
+				<a href="javascript:;">
+					<div class="pic">
+						<span></span>
+						<img width="90" height="82" src="images/065628bb7c85fe0b69ea1fe18a93f4c0137167.jpg">
+					</div>
+					<div class="explain">
+						<div style="">吉野家</div>
+						<div>[139店通用]宫保鸡丁饭（小）+小绿茶=9.9元1份</div>
+						<div>
+							<span class="strong">9.9</span>
+							<span class="strong_color">元</span>
+							<span class="tag">1元抢</span>
+							<span class="line_right">已售86827</span>
+						</div>
+					</div>
+				</a>
+			</dd>
+			<dd>
+				<a href="javascript:;">
+					<div class="pic">
+						<span></span>
+						<img width="90" height="82" src="images/065628bb7c85fe0b69ea1fe18a93f4c0137167.jpg">
+					</div>
+					<div class="explain">
+						<div style="">吉野家</div>
+						<div>[139店通用]宫保鸡丁饭（小）+小绿茶=9.9元1份</div>
+						<div>
+							<span class="strong">9.9</span>
+							<span class="strong_color">元</span>
+							<span class="tag">1元抢</span>
+							<span class="line_right">已售86827</span>
+						</div>
+					</div>
+				</a>
+			</dd>
+			<dd>
+				<a href="javascript:;">
+					<div class="pic">
+						<span></span>
+						<img width="90" height="82" src="images/065628bb7c85fe0b69ea1fe18a93f4c0137167.jpg">
+					</div>
+					<div class="explain">
+						<div style="">吉野家</div>
+						<div>[139店通用]宫保鸡丁饭（小）+小绿茶=9.9元1份</div>
+						<div>
+							<span class="strong">9.9</span>
+							<span class="strong_color">元</span>
+							<span class="tag">1元抢</span>
+							<span class="line_right">已售86827</span>
+						</div>
+					</div>
+				</a>
+			</dd>
+			<dd>
+				<a href="javascript:;">
+					<span>查看全部团购</span>
+				</a>
+			</dd>
+		</dl>
+	</section>
+</body>
+</html>

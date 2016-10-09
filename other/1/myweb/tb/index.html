@@ -1,0 +1,449 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+<meta name="viewport" content="width=device-width, user-scalable=no, initail-scale=1">
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<meta content="yes" name="apple-touch-fullscreen"/>
+<meta content="telephone=no,email=no" name="format-detection"/>
+<meta name="App-Config" content="fullscreen=yes,useHistoryState=yes,transition=yes"/>
+<title>淘宝网触屏版</title>
+<style>
+*{ 
+	margin:0;
+	padding:0;
+	list-style:none;
+}
+html{
+	font-size:20px;
+}
+body{
+	background:#efefef;
+}
+header{
+	width:100%;
+	height:37px;
+	overflow:hidden;
+	box-sizing:border-box;
+	padding:6px 0.6rem 6px 37px;
+	background:url(images/logo.png) no-repeat #ff5500;
+	background-position: 4.5px center;
+	background-size:27px 20px;
+}
+.search{
+	overflow:hidden;
+	width:100%;
+	height:100%;
+	background:#b52600;
+	border-radius:4px;
+	text-align:center;
+	font-size:12px;
+	color:#fff;
+	line-height:25px;
+}
+.search span:before{
+	content:'';
+	display:inline-block;
+	margin-right:5px;
+	vertical-align:middle;
+	margin-top:-3px;
+	width:15px;
+	height:15px;
+	background:url(images/search.png) no-repeat;
+}
+section{
+	width:32rem;
+	margin:0 auto;
+	height:100px;
+	background:red;
+}
+.banner{
+	position:relative;
+	overflow:hidden;
+}
+.banner img{
+	width:100%;
+}
+.banner ul{
+	width:800%;
+	overflow:hidden;
+}
+.banner ul li{
+	width:32rem;
+	float:left;
+}
+.banner ul li a{
+	display:block;
+}
+.banner ol{
+	overflow:hidden;
+	position:absolute;
+	right:0;
+	bottom:0.7rem;
+}
+.banner ol li{
+	float:left;
+	width:0.7rem;
+	height:0.7rem;
+	margin:0.25rem;
+	box-sizing:border-box;
+	background:#fff;
+	opacity:0.5;
+	border-radius:50%;
+	border:1px solid #ccc;
+}
+.banner ol li.on{
+	background:#ff5502;	
+}
+.nav{
+	margin-top:-0.25rem;
+	overflow:hidden;	
+	padding-top:0.5rem;
+	background:#fff;
+}
+.nav li{
+	float:left;
+	width:7rem;
+	height:5.8rem;
+	text-align:center;
+	font-size:12px;
+	color:#666666;
+}
+.nav li div{
+	width:3.91111rem;
+	height:3.91111rem;
+	margin:0 auto 0.25rem;
+}
+.hot{
+	border-top:1px solid #e8e8e8;
+	height:2.3rem;
+	overflow:hidden;
+	margin-bottom:1rem;
+}
+.hot div:nth-child(1){
+	float:left;
+	width:5.1rem;
+	height:100%;
+	background:url(images/TB12wM3HXXXXXbxapXXdFmWHFXX-207-60.png) no-repeat #fff;
+	background-size:75%;
+	background-position: center;
+}
+.hot div:nth-child(2){
+	float:left;
+	width:26.9rem;
+	box-sizing:border-box;
+	border-left:1px solid #e8e8e8;
+	height:100%;
+	overflow:hidden;
+	background:#fff;
+}
+.hot ul{
+	overflow:hidden;
+}
+.hot ul li{
+	width:100%;
+	height:100%;
+	line-height:2.3rem;
+	font-size:14px;
+}
+.hot ul li span{
+	padding:0.1rem;
+	text-align:center;
+	border-radius:4px;
+	margin:0 1rem 0 1rem;
+	box-sizing:border-box;
+	border:1px solid #d81421;
+	color:#d81421;
+}
+.brand{
+	width:100%;
+	overflow:hidden;
+	margin-bottom:1rem;
+}
+.brand div{
+	float:left;
+}
+.countdown{
+	position:absolute;
+	left:1rem;
+	top:4.5rem;
+}
+.countdown span:nth-child(odd){
+	display:inline-block;
+	background:#333333;
+	color:#fff; padding:0 0.2rem;
+}
+.brand div:nth-child(1){
+	width:12.8rem;
+	position:relative;
+}
+.brand div:nth-child(2){
+	width:19.2rem;
+}
+.brand div:nth-child(3){
+	width:9.6rem;
+	margin-top:-1rem;
+}
+.brand div:nth-child(4){
+	width:9.6rem;
+	margin-top:-1rem;
+}
+.brand div img{
+	width:100%;
+}
+.brand2{
+	border-top:2px solid #ff5000;
+	overflow:hidden;
+	background:#fff;
+	margin-bottom:1rem;
+}
+.brand2 img{
+	width:100%;
+}
+.brand2 div{
+	float:left;
+	width:6.5rem;
+}
+.brand2 div:nth-child(1){
+	width:12.4rem;
+}.brand2 div:nth-child(5){
+	width:12.4rem;
+}
+footer{
+	position:fixed;
+	left:0;
+	bottom:0;
+	width:100%;
+	overflow:hidden;
+	border-top:1px solid #e7e7e7;
+}
+footer div{
+	float:left;
+	width:20%;
+	height:43px;
+	background:#fff;
+	text-align:center;
+	
+	font-size:12px;
+	color:#5d656b;
+}
+footer div i{
+	
+	display:block;
+	width:21px;
+	height:20px;
+	margin:3px auto;
+
+}
+
+</style>
+<script>
+document.addEventListener('DOMContentLoaded',function(){
+	var oUl=document.querySelector('.banner ul');
+	var oOl=document.querySelector('.banner ol');
+	var aLi=oUl.children;
+	var aBtn=oOl.children;
+	
+	var x=0;
+	var n=0;
+	oUl.addEventListener('touchstart',function(ev){
+		var disX=ev.targetTouches[0].pageX-x;
+		
+		oUl.style.WebkitTransition='none';
+		
+		function fnMove(ev){
+			x=ev.targetTouches[0].pageX-disX;
+			oUl.style.WebkitTransform='translateX('+x+'px)';	
+		}
+		function fnEnd(){
+			oUl.removeEventListener('touchmove',fnMove,false);
+			oUl.removeEventListener('touchend',fnEnd,false);
+			
+			n=-Math.round(x/aLi[0].offsetWidth);
+			
+			if(n<0)n=0;
+			if(n>=aLi.length)n=aLi.length-1;
+			
+			
+			for (var i=0; i<aBtn.length; i++){
+				aBtn[i].className='';
+			}
+			aBtn[n].className='on';
+			x=-n*aLi[0].offsetWidth;
+			oUl.style.WebkitTransition='.4s all ease';
+			oUl.style.WebkitTransform='translateX('+x+'px)';
+		}
+		
+		oUl.addEventListener('touchmove',fnMove,false);
+		oUl.addEventListener('touchend',fnEnd,false);
+		
+		ev.preventDefault();
+	},false);
+	
+	setInterval(function (){
+		n++;
+		if(n == 8){
+			n=0;
+		}
+		for (var i=0; i<aBtn.length; i++){
+			aBtn[i].className='';
+		}
+		aBtn[n].className='on';
+		x=-n*aLi[0].offsetWidth;
+		oUl.style.WebkitTransition='.4s all ease';
+		oUl.style.WebkitTransform='translateX('+x+'px)';
+	},3000);
+	//hot
+/*	var oHot=document.querySelectorAll('.hot ul');
+	var aHot=document.querySelectorAll('.hot ul li');
+	var y=0;
+	var m=0;
+	setInterval(function (){
+		m++;
+		if(m == 3){
+			m=0;
+		}
+		y=-m*46;
+		document.title=y;
+		oHot.style.WebkitTransform='translateY('+y+'px)';
+	},1000);
+*/},false);
+</script>
+</head>
+	
+
+<body>
+	<div class="wrap">
+		<header>
+			<div class="search">
+				<span>寻找宝贝店铺</span>
+			</div>
+		</header>
+		<section>
+			<div class="banner">
+				<ul>
+					<li><a href="javascript:;"><img src="images/0.jpg"></a></li>
+					<li><a href="javascript:;"><img src="images/1.jpg"></a></li>
+					<li><a href="javascript:;"><img src="images/2.jpg"></a></li>
+					<li><a href="javascript:;"><img src="images/3.jpg"></a></li>
+					<li><a href="javascript:;"><img src="images/4.jpg"></a></li>
+					<li><a href="javascript:;"><img src="images/5.jpg"></a></li>
+					<li><a href="javascript:;"><img src="images/6.jpg"></a></li>
+					<li><a href="javascript:;"><img src="images/7.jpg"></a></li>
+				</ul>
+				<ol>
+					<li class="on"></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+				</ol>
+			</div>
+			<ul class="nav">
+				<li style="padding-left:2rem;"><div style="background:url(images/TB1eSyDGFXXXXaRXVXXszjdGpXX-140-140.png) no-repeat; background-size:100%;"></div>天猫</li>
+				<li><div style="background:url(images/TB1unlMIVXXXXauXXXXszjdGpXX-140-140.png) no-repeat; background-size:100%;"></div>聚划算</li>
+				<li><div style="background:url(images/TB1oq4xHXXXXXbxXpXXszjdGpXX-140-140.png) no-repeat; background-size:100%;"></div>淘生活</li>
+				<li style="padding-right:2rem;"><div style="background:url(images/TB1QeiDGFXXXXb8XVXXszjdGpXX-140-140.png) no-repeat; background-size:100%;"></div>淘点点</li>
+				<li style="padding-left:2rem;"><div style="background:url(images/TB1pAV7HXXXXXX5aXXXszjdGpXX-140-140.png) no-repeat; background-size:100%;"></div>充值</li>
+				<li><div style="background:url(images/TB1z8qiHpXXXXceaXXXszjdGpXX-140-140.png) no-repeat; background-size:100%;"></div>阿里旅行</li>
+				<li><div style="background:url(images/TB1hW9KGFXXXXXLXpXXszjdGpXX-140-140.png) no-repeat; background-size:100%;"></div>领金币</li>
+				<li style="padding-right:2rem;"><div style="background:url(images/TB1Ed9LGFXXXXc3XXXXszjdGpXX-140-140.png) no-repeat; background-size:100%;"></div>分类</li>
+			</ul>
+			<div class="hot">
+				<div></div>
+				<div>
+					<ul>
+						<li><span>推荐</span>开往中国最美的高铁开通了</li>
+						<li><span>热门</span>小心水果让你增了肥</li>
+						<li><span>最新</span>巴宝莉经典格子 DIY美甲简单无难度</li>
+					</ul>
+				</div>
+			</div>
+			<div class="brand">
+				<div>
+					<img src="images/TB1cN0iJFXXXXbNXFXXm_8E_XXX-450-540.jpg_q50.jpg">
+					<div class="countdown">
+						<span>00</span>
+						<span>:</span>
+						<span>00</span>
+						<span>:</span>
+						<span>00</span>
+					</div>
+				</div>
+				<div><img style="width:64.7%;" src="images/TB1fcz3HFXXXXXfXpXXbcAH0VXX-396-216.png"><img style="width:35.3%;" src="images/TB1kmTPGVXXXXXAXVXXXXXXXXXX.jpg"></div>
+				<div><img src="images/TB24DCEeVXXXXXLXpXXXXXXXXXX_!!5-2-subaru.png"></div>
+				<div><img src="images/TB1u8uoJpXXXXXkXVXXXXXXXXXX-333-324.png"></div>
+			</div>
+			<div class="brand2">
+				<div style="position:relative;">
+					<img style="position:absolute; left:0; top:0; width:50%;" src="images/TB1k1kVHXXXXXbYaXXXu5n5JVXX-246-66.png">
+					<img src="images/TB14MI7JpXXXXc5XpXXz0pd_XXX-450-294.png">
+				</div>
+				<div><img src="images/TB1loxeJFXXXXa2XFXX39bo3FXX-192-240.jpg_q50.jpg"></div>
+				<div><img src="images/TB1bHdgJFXXXXbmXXXXXXXXXXXX-192-240.jpg_q50.jpg"></div>
+				<div><img src="images/TB1O136JpXXXXafXXXX39bo3FXX-192-240.jpg_q50.jpg"></div>
+				<div><img src="images/TB2eh.SfXXXXXbvXpXXXXXXXXXX_!!5-2-subaru.png"></div>
+				<div><img src="images/TB1yXVjJFXXXXXGXFXXFgMv5pXX-225-354.png"></div>
+				<div><img src="images/TB1IqEHJpXXXXXYXVXXXXXXXXXX-225-354.jpg_q50.jpg"></div>
+				<div><img src="images/TB1GT0iJFXXXXaLXpXX2ggv5pXX-225-354.jpg_q50.jpg"></div>
+			</div>
+			<div class="brand2">
+				<div style="position:relative;">
+					<img style="position:absolute; left:0; top:0; width:50%;" src="images/TB1k1kVHXXXXXbYaXXXu5n5JVXX-246-66.png">
+					<img src="images/TB14MI7JpXXXXc5XpXXz0pd_XXX-450-294.png">
+				</div>
+				<div><img src="images/TB1loxeJFXXXXa2XFXX39bo3FXX-192-240.jpg_q50.jpg"></div>
+				<div><img src="images/TB1bHdgJFXXXXbmXXXXXXXXXXXX-192-240.jpg_q50.jpg"></div>
+				<div><img src="images/TB1O136JpXXXXafXXXX39bo3FXX-192-240.jpg_q50.jpg"></div>
+				<div><img src="images/TB2eh.SfXXXXXbvXpXXXXXXXXXX_!!5-2-subaru.png"></div>
+				<div><img src="images/TB1yXVjJFXXXXXGXFXXFgMv5pXX-225-354.png"></div>
+				<div><img src="images/TB1IqEHJpXXXXXYXVXXXXXXXXXX-225-354.jpg_q50.jpg"></div>
+				<div><img src="images/TB1GT0iJFXXXXaLXpXX2ggv5pXX-225-354.jpg_q50.jpg"></div>
+			</div>
+			<div class="brand2">
+				<div style="position:relative;">
+					<img style="position:absolute; left:0; top:0; width:50%;" src="images/TB1k1kVHXXXXXbYaXXXu5n5JVXX-246-66.png">
+					<img src="images/TB14MI7JpXXXXc5XpXXz0pd_XXX-450-294.png">
+				</div>
+				<div><img src="images/TB1loxeJFXXXXa2XFXX39bo3FXX-192-240.jpg_q50.jpg"></div>
+				<div><img src="images/TB1bHdgJFXXXXbmXXXXXXXXXXXX-192-240.jpg_q50.jpg"></div>
+				<div><img src="images/TB1O136JpXXXXafXXXX39bo3FXX-192-240.jpg_q50.jpg"></div>
+				<div><img src="images/TB2eh.SfXXXXXbvXpXXXXXXXXXX_!!5-2-subaru.png"></div>
+				<div><img src="images/TB1yXVjJFXXXXXGXFXXFgMv5pXX-225-354.png"></div>
+				<div><img src="images/TB1IqEHJpXXXXXYXVXXXXXXXXXX-225-354.jpg_q50.jpg"></div>
+				<div><img src="images/TB1GT0iJFXXXXaLXpXX2ggv5pXX-225-354.jpg_q50.jpg"></div>
+			</div>
+		</section>
+		<footer>
+			<div><i style="background:url(images/ft1.png) no-repeat;"></i>首页</div>
+			<div><i style="background:url(images/ft2.png) no-repeat;"></i>物流</div>
+			<div><i style="background:url(images/ft3.png) no-repeat;"></i>购物车</div>
+			<div><i style="background:url(images/ft4.png) no-repeat;"></i>我的淘宝</div>
+			<div><i style="background:url(images/ft5.png) no-repeat;"></i>更多</div>
+		</footer>
+	</div>
+<script>
+;(function(win,doc){
+	var resize='orientationchange' in window?'orientationchange':'resize';
+	
+	function change(){
+		var html=doc.documentElement;
+		var w=doc.documentElement.clientWidth;	
+		if(w > 640){
+			html.style.fontSize='20px';	
+		}else{
+			html.style.fontSize=w/32+'px';	
+		}
+	}
+	win.addEventListener(resize,change,false);
+	win.addEventListener('load',change,false);
+	doc.addEventListener('DOMContentLoaded',false);
+})(window,document);
+</script>
+</body>
+</html>

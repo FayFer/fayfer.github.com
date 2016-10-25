@@ -18,6 +18,9 @@
     <div id="div" class="out">
         <input class="txt" type="text" name="" id="txt"/>
         <select name="" id="country" class="country">
+            <option value="北京">北京</option>
+            <option value="上海">上海</option>
+            <option value="天津">天津</option>
         </select>
     </div>
 </div>
@@ -32,7 +35,7 @@
                 addOpt(country, this.value);
                 this.value = '';
             }
-        }
+        };
 
         function addOpt(obj, v){
             var o = document.createElement('option');

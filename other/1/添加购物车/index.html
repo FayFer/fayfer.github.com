@@ -1,0 +1,221 @@
+<!--文档声明为 html（最新html5）-->
+<!doctype html>
+<html>
+	<head>
+		<!--声明当前页面编码格式为国际编码（utf-8）还有一种中文编码（gbk/gb2312）-->
+		<meta charset="UTF-8">
+		<!--网页三要素-->
+		<meta name="Keywords" content="关键词,关键词">
+		<meta name="Description" content="描述">
+		<title>购物车添加</title>
+		<!--css 层叠样式表  衣服，化妆品 修饰作用-->
+		<style>
+		/*浏览器默认产生 兼容*/
+		*{margin:0;/*外边距*/padding:0;/*内边距*/}
+		.banner{/* 以.开头 class名字 类选择器*/
+			width:100%;/*宽*/
+			height:160px;/*高*/
+			background:url('images/banner.jpg') center top;/*背景*/
+			/*background-position:center top;背景图片定位*/
+		}
+		.prc-list{
+			width:990px;
+			height:330px;
+			margin:50px auto;/*上下外边距为50 左右自适应居中*/
+		}
+		.prc-list ul li{
+			list-style:none;/*去掉默认列表样式*/
+			width:220px;
+			height:300px;
+			border:1px solid #DEDEDE;/*边框线*/
+			float:left;/*左浮动*/
+			margin:0 6px;
+			padding:5px 6px;
+		}
+		.prc-list ul li img{
+			width:220px;
+			height:220px;
+		}
+		.prc-list ul li .text{
+			color:#666;
+			font-size:14px;
+			line-height:30px;/*行高 把文字放置行高中间*/
+		}
+		.prc-list ul li .money{
+			float:left;
+			line-height:30px;
+			color:red;
+			font-size:14px;
+		}
+		.prc-list ul li .btn{
+			float:right;
+			line-height:30px;
+			background:red;
+			font-size:14px;
+			color:#fff;
+			padding:0 10px;
+			border-radius:5px;
+			font-family:'微软雅黑';
+			cursor:pointer;/*鼠标手指*/
+		}
+		.car{
+			width:260px;
+			height:100%;
+			background:#ccc;
+			position:fixed;
+			top:0;
+			right:-220px;
+		}
+		.car .left{
+			width:40px;
+			height:100%;
+			background:#000;
+			float:left;
+		}
+		.car .left .c-btn{
+			color:#fff;
+			width:16px;
+			background:red;
+			padding:10px 12px;
+			margin-top:300px;
+			cursor:pointer;
+		}
+		.car .right{
+			width:220px;
+			height:100%;
+			float:left;
+		}
+		.car .right dl{
+			width:200px;
+			height:60px;
+			border-bottom:1px solid #fff;
+			padding:10px;
+		}
+		.car .right dl dt{
+			float:left;
+		}
+		.car .right dl dt img{
+			width:60px;
+			height:60px;
+		}
+		.car .right dl dd{
+			width:130px;
+			float:left;
+			margin-left:10px;
+		}
+		.car .right dl dd.title{
+			font-size:12px;
+			color:#666;
+			line-height:20px;
+		}
+		.car .right dl dd.money{
+			font-size:12px;
+			color:red;
+			line-height:20px;
+		}
+		.img{
+			width:50px;
+			height:50px;
+			border-radius:50%;
+		}
+		</style>
+	</head>
+	<body><!--身体 页面展示 显示区域-->
+	<!--div 盒子模型 有宽度 高度 放置内容的长方形
+		src="" 图片地址
+	-->
+	<div class="banner"></div>
+	<div class="prc-list">
+		<ul>
+			<li>
+				<img src="images/1.jpg" width="430" height="430" alt=""/>
+				<p class="text">2015夏季新品海澜之家女装正品1</p>
+				<p class="money">￥193.0</p>
+				<p class="btn">加入购物车</p>
+			</li>
+			<li>
+				<img src="images/2.jpg" width="430" height="430" alt=""/>
+				<p class="text">2015夏季新品海澜之家女装正品1</p>
+				<p class="money">￥193.0</p>
+				<p class="btn">加入购物车</p>
+			</li>
+			<li>
+				<img src="images/3.jpg" width="430" height="430" alt=""/>
+				<p class="text">2015夏季新品海澜之家女装正品1</p>
+				<p class="money">￥193.0</p>
+				<p class="btn">加入购物车</p>
+			</li>
+			<li>
+				<img src="images/4.jpg" width="430" height="430" alt=""/>
+				<p class="text">2015夏季新品海澜之家女装正品1</p>
+				<p class="money">￥193.0</p>
+				<p class="btn">加入购物车</p>
+			</li>
+		</ul>
+	</div>
+	<div class="car">
+		<div class="left"><p class="c-btn">加入购物车</p></div>
+		<div class="right">
+			<!--
+				<dl>
+					<dt><img src="images/1.jpg" width="430" height="430" alt=""/></dt>
+					<dd class="title">2015夏季新品海澜之家男装正品1</dd>
+					<dd class="money">￥193.0</dd>
+				</dl>
+				<dl>
+					<dt><img src="images/1.jpg" width="430" height="430" alt=""/></dt>
+					<dd class="title">2015夏季新品海澜之家男装正品1</dd>
+					<dd class="money">￥193.0</dd>
+				</dl>
+			-->
+		</div>
+	</div>
+	<script src="js/jquery.js"></script>
+	<script src="js/tz_fly.js"></script>
+	<script>
+	//如何获取对象  $('对象')
+	$('.btn').click(function(){
+		var  imgsrc = $(this).siblings('img').attr('src');
+		var  Con = $(this).siblings('.text').html();
+		var  Money = $(this).siblings('.money').html();
+		$('.right').append('<dl><dt><img src="'+imgsrc+'" width="430" height="430" alt=""/></dt><dd class="title">'+Con+'</dd><dd class="money">'+Money+'</dd></dl>');
+		add(event);
+	});
+	//打开购物车
+	var kg = 0;//可以打开
+	$('.c-btn').click(function(){
+		if(kg == 0){//条件成立 就执行
+			$('.car').animate({right:0},500);
+			kg = 1;//条件变成不成立
+		}else{//条件不成立 就执行
+			$('.car').animate({right:'-220px'},500);
+			kg = 0;//条件成立
+		}
+	});
+	function add(event){
+		//拿到对应的图片
+		var imgsrc = $(event.target).siblings('img').attr('src');
+		//创建一张图片
+		var flyer = $('<img src="'+imgsrc+'" class="img" />');
+		//添加插件的抛物线
+		flyer.fly({
+			start:{
+				left:event.clientX,//鼠标左边的位置
+				top:event.clientY//鼠标上边的位置
+			},
+			end:{
+				left:$('.c-btn').offset().left,
+				top:$('.c-btn').offset().top,
+				width:20,
+				height:20
+			},
+			onEnd:function(){
+				flyer.fadeOut('slow',function(){
+					$(this).remove();//清除
+				})
+			}
+		})
+	}
+	</script>
+	</body>
+</html>

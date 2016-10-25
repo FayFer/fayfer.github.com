@@ -38,10 +38,10 @@
         btn.onclick = function(){
             max(textarea);
             return false;
-        }
+        };
         textarea.oninput = textarea.onpropertychange = function(){
             change(this);
-        }
+        };
         var m = 140;
         function change(o){
             var l = len(o.value);
